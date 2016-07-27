@@ -1,0 +1,263 @@
+/*=================================
+=            Variables            =
+=================================*/
+/*=====  End of Variables  ======*/
+/*==============================
+=            Mixins            =
+==============================*/
+/*=====  End of Mixins  ======*/
+/*=============================
+=            Fonts            =
+=============================*/
+@font-face {
+  font-family: "Calibri";
+  src: url("../assets/fonts/Calibri.ttf"); }
+@font-face {
+  font-family: "Calibri Bold";
+  src: url("../assets/fonts/Calibri Bold.ttf"); }
+/*=====  End of Fonts  ======*/
+/*===============================================
+=            Global Container Styles            =
+===============================================*/
+.app-container {
+  width: 100%;
+  height: 1024px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: vertical;
+  -moz-flex-direction: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center; }
+
+/*=====  End of Global Container Styles  ======*/
+/*=====================================
+=            Header Styles            =
+=====================================*/
+header {
+  width: 100%;
+  height: 55px;
+  background-color: #F27B20;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+  header .prosearch-logo {
+    width: 188px;
+    height: 55px;
+    margin-left: 5%;
+    background-image: url("../assets/logos/ProSearchLogo.png");
+    background-color: #FFF;
+    background-size: 100%; }
+  header .header-right {
+    margin-right: 2%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+    header .header-right p {
+      position: relative;
+      right: 5px;
+      margin: 0;
+      color: #FFF;
+      font-family: "Calibri", sans-serif;
+      font-size: 12px;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: flex-end;
+      align-items: flex-end; }
+    header .header-right .wolfpack-logo {
+      width: 50px;
+      height: 50px;
+      margin-top: 3px;
+      background-image: url("../assets/logos/WPT_logo_White_150.png");
+      background-size: 100%; }
+
+/*=====  End of Header Styles  ======*/
+/*=========================================
+=            Input Form Styles            =
+=========================================*/
+.scores-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  bottom: 5%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: vertical;
+  -moz-flex-direction: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center; }
+  .scores-container .scores-header {
+    color: #6B737C;
+    font-family: "Calibri", sans-serif;
+    font-size: 20px; }
+  .scores-container .scores-form {
+    position: relative;
+    right: 39px;
+    height: 126px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+    .scores-container .scores-form .input-container {
+      color: #6B737C;
+      font-family: "Calibri", sans-serif;
+      font-size: 12px; }
+      .scores-container .scores-form .input-container label {
+        margin-right: 5px;
+        color: #6B737C; }
+      .scores-container .scores-form .input-container input {
+        width: 175px;
+        height: 29px;
+        border: 1px solid #6B737C;
+        box-sizing: border-box;
+        padding-left: 10px;
+        outline: none;
+        -webkit-border-radius: 2.5px;
+        border-radius: 2.5px;
+        background-clip: padding-box; }
+        .scores-container .scores-form .input-container input::-webkit-outer-spin-button, .scores-container .scores-form .input-container input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0; }
+    .scores-container .scores-form .submit {
+      width: 90px;
+      height: 23px;
+      border: 1px solid #F27B20;
+      color: #F27B20;
+      background-color: #FFF;
+      outline: none;
+      font-family: "Calibri Bold", sans-serif;
+      font-size: 10px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      background-clip: padding-box; }
+
+/*=====  End of Input Form Styles  ======*/
+/*===========================================
+=            Progress Bar Styles            =
+===========================================*/
+.progress-container .you-score, .progress-container .group-score, .progress-container .docs-reviewed {
+  position: relative;
+  text-align: center;
+  width: 45px;
+  color: #6A737B;
+  font-family: "Calibri Bold", sans-serif;
+  font-size: 14px; }
+.progress-container .progress-bars {
+  position: relative; }
+  .progress-container .progress-bars .progress {
+    margin: 0;
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    overflow: visible; }
+    .progress-container .progress-bars .progress:first-child {
+      width: 500px;
+      height: 42px;
+      border: 2px solid #A7A9AC;
+      background-color: #FFF;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      background-clip: padding-box; }
+    .progress-container .progress-bars .progress:nth-child(2) {
+      width: 496px;
+      height: 21px;
+      position: absolute;
+      bottom: 2px;
+      left: 2px;
+      -webkit-border-radius: 0;
+      border-radius: 0;
+      background-clip: padding-box; }
+  .progress-container .progress-bars .personal-bar .progress-bar {
+    position: relative;
+    background-color: #F27B20;
+    -moz-transition: width 0.4s ease-out;
+    -o-transition: width 0.4s ease-out;
+    -webkit-transition: width 0.4s ease-out;
+    transition: width 0.4s ease-out;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background-clip: padding-box; }
+  .progress-container .progress-bars .group-bar {
+    background-color: transparent; }
+    .progress-container .progress-bars .group-bar .progress-bar {
+      position: relative;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      background-color: #0094D5;
+      border: 1px solid #FFF;
+      -moz-transition: width 0.4s ease-out;
+      -o-transition: width 0.4s ease-out;
+      -webkit-transition: width 0.4s ease-out;
+      transition: width 0.4s ease-out;
+      -webkit-border-radius: 2px;
+      border-radius: 2px;
+      background-clip: padding-box; }
+.progress-container .group-score {
+  top: 11px; }
+.progress-container .docs-reviewed {
+  top: 6px;
+  width: auto; }
+
+/*=====  End of Progress Bar Styles  ======*/
+/*=====================================
+=            Footer Styles            =
+=====================================*/
+.footer {
+  width: 100%;
+  height: 25px;
+  background-color: #F3F4F4;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  align-items: center; }
+  .footer p {
+    margin-right: 6.5%;
+    margin-bottom: 0px;
+    color: #A6A8AB;
+    font-family: "Calibri", sans-serif;
+    font-size: 12px; }
+
+/*=====  End of Footer Styles  ======*/
+
+/*# sourceMappingURL=sass.css.map */

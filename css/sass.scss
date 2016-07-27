@@ -1,0 +1,338 @@
+/*=================================
+=            Variables            =
+=================================*/
+
+$greyFont: #6B737C;
+$orange: #F27B20;
+
+/*=====  End of Variables  ======*/
+
+/*==============================
+=            Mixins            =
+==============================*/
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin justify-content($value) {
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin align-items($value) {
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+@mixin flex-direction($direction) {
+  @if $direction == column {
+    -webkit-flex-direction:vertical;
+    -moz-flex-direction:vertical;
+    -ms-flex-direction:column;
+    -webkit-flex-direction:column;
+    flex-direction:column;
+  } @else {
+    -webkit-flex-direction:horizontal;
+    -moz-flex-direction:horizontal;
+    -ms-flex-direction:row;
+    -webkit-flex-direction:row;
+    flex-direction:row;
+  }
+}
+
+@mixin font($family: "Calibri", $size: 12px) {
+  font: {
+    family: $family, sans-serif;
+    size: $size;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box; 
+}
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+
+/*=====  End of Mixins  ======*/
+
+/*=============================
+=            Fonts            =
+=============================*/
+
+@font-face {
+  font-family: "Calibri";
+  src: url("../assets/fonts/Calibri.ttf");
+}
+
+@font-face {
+  font-family: "Calibri Bold";
+  src: url("../assets/fonts/Calibri Bold.ttf");
+}
+
+/*=====  End of Fonts  ======*/
+
+/*===============================================
+=            Global Container Styles            =
+===============================================*/
+
+.app-container {
+  width: 100%;
+  height: 1024px;
+  
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include align-items(center);
+}
+
+/*=====  End of Global Container Styles  ======*/
+
+/*=====================================
+=            Header Styles            =
+=====================================*/
+
+header {
+  width: 100%;
+  height: 55px;
+  background-color: $orange;
+  
+  .prosearch-logo {
+    width: 188px;
+    height: 55px;
+    margin-left: 5%;
+    background: {
+      image: url("../assets/logos/ProSearchLogo.png");
+      color: #FFF;
+      size: 100%;
+    }
+  }
+
+  .header-right {
+    margin-right: 2%;
+
+    p {
+      position: relative;
+      right: 5px;
+      margin: 0;
+      color: #FFF;  
+
+      @include font();
+      @include flexbox();
+      @include align-items(flex-end);
+    }
+
+    .wolfpack-logo {
+      width: 50px;
+      height: 50px;
+      margin-top: 3px;
+      background: {
+        image: url("../assets/logos/WPT_logo_White_150.png");
+        size: 100%;
+      }
+    }
+    
+    @include flexbox();
+    @include justify-content(space-between);
+  }
+  
+  @include flexbox();
+  @include justify-content(space-between);
+}
+
+/*=====  End of Header Styles  ======*/
+
+/*=========================================
+=            Input Form Styles            =
+=========================================*/
+
+.scores-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  bottom: 5%;
+
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  .scores-header {
+    color: $greyFont;
+  
+    @include font("Calibri", 20px);
+  }
+
+  .scores-form {
+    position: relative;
+    right: 39px;
+    height: 126px;
+    
+
+    .input-container {
+      color: $greyFont;
+
+      label {
+        margin-right: 5px;
+        color: $greyFont;
+      }
+
+      input {
+        width: 175px;
+        height: 29px;
+        border: 1px solid $greyFont;
+        box-sizing: border-box;
+        padding-left: 10px;
+        outline: none;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        @include border-radius(2.5px);
+      }
+
+      @include font();
+    }
+
+    .submit {
+      width: 90px;
+      height: 23px;
+      border: 1px solid $orange;
+      color: $orange;
+      background-color: #FFF;
+      outline: none;
+
+      @include font("Calibri Bold", 10px);      
+      @include border-radius(5px);
+    }
+
+    @include flexbox();
+    @include flex-direction(column);
+    @include align-items(flex-end);
+    @include justify-content(space-between);
+  }
+}
+
+/*=====  End of Input Form Styles  ======*/
+
+/*===========================================
+=            Progress Bar Styles            =
+===========================================*/
+
+.progress-container {
+
+  .you-score, .group-score, .docs-reviewed {
+    position: relative;
+    text-align: center;
+    width: 45px;
+    color: #6A737B;
+
+    @include font("Calibri Bold", 14px); 
+  }
+
+  .progress-bars {
+    position: relative;
+
+    .progress {
+      margin: 0;
+      background-color: transparent;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      overflow: visible;
+      
+      &:first-child {
+        width: 500px;
+        height: 42px;
+        border: 2px solid #A7A9AC;
+        background-color: #FFF;
+
+        @include border-radius(4px);
+      }
+      
+      &:nth-child(2) {
+        width: 496px;
+        height: 21px;
+        position: absolute;
+        bottom: 2px;
+        left: 2px;
+
+        @include border-radius(0);
+      }
+    }
+
+    .personal-bar {
+
+      .progress-bar {
+        position: relative;
+        background-color: #F27B20;
+        
+        @include transition(width .4s ease-out);
+        @include border-radius(2px);
+      }
+    }
+    
+    .group-bar {
+      background-color: transparent;
+
+      .progress-bar {
+        position: relative;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        background-color: #0094D5;
+        border: 1px solid #FFF;
+
+        @include transition(width .4s ease-out);
+        @include border-radius(2px);
+      }
+    }
+  }
+
+  .group-score {
+    top: 11px;
+  }
+
+  .docs-reviewed {
+    top: 6px;
+    width: auto;
+  }
+}
+
+/*=====  End of Progress Bar Styles  ======*/
+
+/*=====================================
+=            Footer Styles            =
+=====================================*/
+
+.footer {
+  width: 100%;
+  height: 25px;
+  background-color: #F3F4F4;
+
+  p {
+    margin-right: 6.5%;
+    margin-bottom: 0px;
+    color: #A6A8AB;
+
+    @include font();
+  }
+
+  @include flexbox();
+  @include justify-content(flex-end);
+  @include align-items(center);
+}
+
+/*=====  End of Footer Styles  ======*/
